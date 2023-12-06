@@ -6,6 +6,7 @@ const cors = require("cors")
 const Connection = require("./config/dbConfig")
 const router = require("./router/userRouter")
 const productRouter = require("./router/productRouter")
+const searchRouter = require("./router/searchRouter")
 const app = express()
 
 Connection()
@@ -17,6 +18,7 @@ app.use(cors())
 
 app.use('/api', router)
 app.use('/api', productRouter)
+app.use('/api', searchRouter)
 
 app.get("/", (req, res) => {
     res.send("working")
