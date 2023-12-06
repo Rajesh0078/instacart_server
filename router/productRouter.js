@@ -1,5 +1,5 @@
 const { CartCtrl, removeProduct, cartValue } = require("../controllers/cartCtrl")
-const { randomproducts, categoryProducts, } = require("../controllers/randomProductCtrl")
+const { randomproducts, categoryProducts, allProducts, } = require("../controllers/randomProductCtrl")
 
 const productRouter = require("express").Router()
 
@@ -8,6 +8,7 @@ productRouter.post('/products/:category', categoryProducts)
 productRouter.post('/cart', CartCtrl)
 productRouter.post('/cartremove', removeProduct)
 productRouter.post('/cartvalue', cartValue)
+productRouter.post('/allproducts', allProducts)
 
 
 

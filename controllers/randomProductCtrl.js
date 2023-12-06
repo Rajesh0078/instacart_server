@@ -45,5 +45,15 @@ const randomproducts = async (req, res) => {
     }
 }
 
+const allProducts = async (req, res) => {
+    try {
+        const products = await Products.find({})
+        const names = products.map((i) => i.name)
+        res.send(names)
+    } catch (error) {
+        console.log(error)
+    }
+}
 
-module.exports = { randomproducts, categoryProducts }
+
+module.exports = { randomproducts, categoryProducts, allProducts }
