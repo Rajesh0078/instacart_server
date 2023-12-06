@@ -8,7 +8,7 @@ productRouter.post('/products/:category', categoryProducts)
 productRouter.post('/cart', CartCtrl)
 productRouter.post('/cartremove', removeProduct)
 productRouter.post('/cartvalue', cartValue)
-productRouter.post('/allproducts', allProducts)
+productRouter.get('/allproducts', allProducts)
 
 
 
