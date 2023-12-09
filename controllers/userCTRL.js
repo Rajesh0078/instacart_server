@@ -17,7 +17,9 @@ const authCtrl = async (req, res) => {
         }
         else {
             const user = await User.create(req.body)
-            res.send("user created successfully")
+            res.status(200).json({
+                msg: "signup successfull"
+            })
         }
 
     } catch (error) {
