@@ -7,6 +7,7 @@ const Connection = require("./config/dbConfig")
 const router = require("./router/userRouter")
 const productRouter = require("./router/productRouter")
 const searchRouter = require("./router/searchRouter")
+const stripeRouter = require("./router/stripeRouter")
 const app = express()
 
 Connection()
@@ -19,6 +20,7 @@ app.use(cors())
 app.use('/api', router)
 app.use('/api', productRouter)
 app.use('/api', searchRouter)
+app.use('/api', stripeRouter)
 
 app.get("/", (req, res) => {
     res.send("working")
